@@ -21,8 +21,33 @@ while (!end)
         }
     }
     while (pc);//pc
+    if ((tablica[0, 0] == tablica[0, 1] && tablica[0, 1] == tablica[0, 2] && tablica[0, 2] == 2) ||
+    (tablica[1, 0] == tablica[1, 1] && tablica[1, 1] == tablica[1, 2] && tablica[1, 2] == 2) ||
+    (tablica[2, 0] == tablica[2, 1] && tablica[2, 1] == tablica[2, 2] && tablica[2, 2] == 2) ||
+    (tablica[0, 0] == tablica[1, 0] && tablica[1, 0] == tablica[2, 0] && tablica[2, 0] == 2) ||
+    (tablica[0, 1] == tablica[1, 1] && tablica[1, 1] == tablica[2, 1] && tablica[2, 1] == 2) ||
+    (tablica[0, 2] == tablica[1, 2] && tablica[1, 2] == tablica[2, 2] && tablica[2, 2] == 2) ||
+    (tablica[0, 0] == tablica[1, 1] && tablica[1, 1] == tablica[2, 2] && tablica[2, 2] == 2) ||
+    (tablica[0, 2] == tablica[1, 1] && tablica[1, 1] == tablica[2, 0] && tablica[2, 0] == 2))
+    {
+        Console.WriteLine("Gracz wygrywa!");
+        end = true;
+    }
+    if ((tablica[0, 0] == tablica[0, 1] && tablica[0, 1] == tablica[0, 2] && tablica[0, 2] == 1) ||
+        (tablica[1, 0] == tablica[1, 1] && tablica[1, 1] == tablica[1, 2] && tablica[1, 2] == 1) ||
+        (tablica[2, 0] == tablica[2, 1] && tablica[2, 1] == tablica[2, 2] && tablica[2, 2] == 1) ||
+        (tablica[0, 0] == tablica[1, 0] && tablica[1, 0] == tablica[2, 0] && tablica[2, 0] == 1) ||
+        (tablica[0, 1] == tablica[1, 1] && tablica[1, 1] == tablica[2, 1] && tablica[2, 1] == 1) ||
+        (tablica[0, 2] == tablica[1, 2] && tablica[1, 2] == tablica[2, 2] && tablica[2, 2] == 1) ||
+        (tablica[0, 0] == tablica[1, 1] && tablica[1, 1] == tablica[2, 2] && tablica[2, 2] == 1) ||
+        (tablica[0, 2] == tablica[1, 1] && tablica[1, 1] == tablica[2, 0] && tablica[2, 0] == 1))
+    {
+        Console.WriteLine("PC wygrywa!");
+        end = true;
+    }
 
     //wypisywanie tablicy
+    Console.Clear();
     for (int i = 0; i < 3; i++)
     {
         Console.Write(" ");
@@ -73,16 +98,17 @@ while (!end)
     }
     while (player);//user
     Console.WriteLine("Sprawdzam");
-   
 
-    if ((tablica[0,0] == tablica[0,1] && tablica[0,1] == tablica[0,2] && tablica[0,2] == 2) ||
-        (tablica[1,0] == tablica[1,1] && tablica[1,1] == tablica[1,2] && tablica[1,2] == 2) ||
-        (tablica[2,0] == tablica[2,1] && tablica[2,1] == tablica[2,2] && tablica[2,2] == 2) ||
-        (tablica[0,0] == tablica[1,0] && tablica[1,0] == tablica[2,0] && tablica[2,0] == 2) ||
-        (tablica[0,1] == tablica[1,1] && tablica[1,1] == tablica[2,1] && tablica[2,1] == 2) ||
-        (tablica[0,2] == tablica[1,2] && tablica[1,2] == tablica[2,2] && tablica[2,2] == 2) ||
-        (tablica[0,0] == tablica[1,1] && tablica[1,1] == tablica[2,2] && tablica[2,2] == 2) ||
-        (tablica[0,2] == tablica[1,1] && tablica[1,1] == tablica[2,0] && tablica[2,0] == 2))
+    Console.Clear();
+
+    if ((tablica[0, 0] == tablica[0, 1] && tablica[0, 1] == tablica[0, 2] && tablica[0, 2] == 2) ||
+        (tablica[1, 0] == tablica[1, 1] && tablica[1, 1] == tablica[1, 2] && tablica[1, 2] == 2) ||
+        (tablica[2, 0] == tablica[2, 1] && tablica[2, 1] == tablica[2, 2] && tablica[2, 2] == 2) ||
+        (tablica[0, 0] == tablica[1, 0] && tablica[1, 0] == tablica[2, 0] && tablica[2, 0] == 2) ||
+        (tablica[0, 1] == tablica[1, 1] && tablica[1, 1] == tablica[2, 1] && tablica[2, 1] == 2) ||
+        (tablica[0, 2] == tablica[1, 2] && tablica[1, 2] == tablica[2, 2] && tablica[2, 2] == 2) ||
+        (tablica[0, 0] == tablica[1, 1] && tablica[1, 1] == tablica[2, 2] && tablica[2, 2] == 2) ||
+        (tablica[0, 2] == tablica[1, 1] && tablica[1, 1] == tablica[2, 0] && tablica[2, 0] == 2))
     {
         Console.WriteLine("Gracz wygrywa!");
         end = true;
@@ -99,5 +125,31 @@ while (!end)
         Console.WriteLine("PC wygrywa!");
         end = true;
     }
-
+    for (int i = 0; i < 3; i++)
+    {
+        Console.Write(" ");
+        for (int j = 0; j < 3; j++)
+        {
+            if (tablica[i, j] == 0)
+            {
+                Console.Write(" ");
+            }
+            if (tablica[i, j] == 1)
+            {
+                Console.Write("X");
+            }
+            if (tablica[i, j] == 2)
+            {
+                Console.Write("O");
+            }
+            if (j < 2)
+            {
+                Console.Write(" | ");
+            }
+        }
+        if (i < 2)
+        {
+            Console.WriteLine("\n-----------");
+        }
+    }
 }
