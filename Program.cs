@@ -1,12 +1,4 @@
-﻿using System.Numerics;
-
-Console.WriteLine(" X | O | X ");
-Console.WriteLine("-----------");
-Console.WriteLine(" O | X | O ");
-Console.WriteLine("-----------");
-Console.WriteLine(" X | O | X ");
-Console.WriteLine();
-int[,] tablica = new int[3, 3];
+﻿int[,] tablica = new int[3, 3];
 bool end = false;
 while (!end)
 {
